@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Manage Users - ThinkTank</title>
+</head>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logo-placeholder.png" alt="Logo">
+            ThinkTank
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="manage-users">
+        <h1>Manage Users</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- User entries will be populated here by JavaScript -->
+            </tbody>
+        </table>
+        <button onclick="window.location.href='adduser.html'">Add User</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

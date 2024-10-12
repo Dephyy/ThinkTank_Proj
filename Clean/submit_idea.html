@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Submit Idea</title>
+</head>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logo-placeholder.png" alt="Logo">
+            ThinkTank
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="submit-idea">
+                <h2>Submit Your Idea</h2>
+                <form action="submit_idea.php" method="POST" enctype="multipart/form-data">
+                    <div class="input-field">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="category">Category</label>
+                        <input type="text" id="category" name="category" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="4" required placeholder="Describe your idea..."></textarea>
+                    </div>
+
+                    <div class="file-input-container">
+                        <label for="file_attachment">Attach File (optional)</label>
+                        <input type="file" id="file_attachment" name="file_attachment" accept="*/*" class="file-input">
+                        <span class="file-label">No file chosen</span>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Idea</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

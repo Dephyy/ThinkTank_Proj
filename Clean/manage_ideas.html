@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Manage Ideas</title>
+</head>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logo-placeholder.png">
+            ThinkTank
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <h1>Manage Ideas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Files Attached</th>
+                    <th>Submitted By</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="ideas-table-body">
+                <!-- Entries will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Fetch ideas and populate table
+        fetch('fetch_ideas.php')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('ideas-table-body');
+                data.forEach(idea => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><span class="idea-title">${idea.title}</span><input type="text" value="${idea.title}" data-id="${idea.idea_id}" class="editable-title" style="display: none;"></td>
+                        <td><span class="idea-category">${idea.category}</span><input type="text" value="${idea.category}" data-id="${idea.idea_id}" class="editable-category" style="display: none;"></td>
+                        <td><span class="idea-description">${idea.description}</span><textarea data-id="${idea.idea_id}" class="editable-description" style="display: none;">${idea.description}</textarea></td>
+                        <td>${idea.files_attached}</td>
+                        <td>${idea.submitted_by}</td>
+                        <td>
+                            <button class="edit-button" data-id="${idea.idea_id}">Edit</button>
+                            <button class="save-button" data-id="${idea.idea_id}" style="display: none;">Save</button>
+                            <button class="delete-button" data-id="${idea.idea_id}">Delete</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            });
+
+        // Event delegation for edit, save, and delete buttons
+        document.getElementById('ideas-table-body').addEventListener('click', function(e) {
+            if (e.target.classList.contains('edit-button')) {
+                const row = e.target.closest('tr');
+                row.querySelector('.idea-title').style.display = 'none';
+                row.querySelector('.editable-title').style.display = 'block';
+                row.querySelector('.idea-category').style.display = 'none';
+                row.querySelector('.editable-category').style.display = 'block';
+                row.querySelector('.idea-description').style.display = 'none';
+                row.querySelector('.editable-description').style.display = 'block';
+                e.target.style.display = 'none';
+                row.querySelector('.save-button').style.display = 'inline-block';
+            }
+
+            if (e.target.classList.contains('save-button')) {
+                const ideaId = e.target.getAttribute('data-id');
+                const title = e.target.parentElement.parentElement.querySelector('.editable-title').value;
+                const category = e.target.parentElement.parentElement.querySelector('.editable-category').value;
+                const description = e.target.parentElement.parentElement.querySelector('.editable-description').value;
+
+                fetch('update_idea.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ idea_id: ideaId, title: title, category: category, description: description })
+                })
+                .then(response => response.json())
+                .then(result => {
+                    alert(result.message);
+                    // Optionally refresh the table or update the row display
+                    location.reload(); // Refresh the page to show updated data
+                });
+            }
+
+            if (e.target.classList.contains('delete-button')) {
+                const ideaId = e.target.getAttribute('data-id');
+                fetch('delete_idea.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ idea_id: ideaId })
+                })
+                .then(response => response.json())
+                .then(result => {
+                    alert(result.message);
+                    // Optionally refresh the table or remove the row
+                    location.reload(); // Refresh the page to show updated data
+                });
+            }
+        });
+    </script>
+</body>
+</html>

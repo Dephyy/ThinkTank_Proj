@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logo-placeholder.png">
+            ThinkTank
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="edit-profile">
+                <h2>Edit Profile</h2>
+                <form action="update_profile.php" method="POST" enctype="multipart/form-data">
+                    <div class="file-input-container">
+                        <label for="profile-picture">Profile Picture</label>
+                        <input type="file" id="profile-picture" name="profile_picture" accept="image/*" class="file-input">
+                        <span class="file-label">No file chosen</span>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
