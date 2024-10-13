@@ -1,0 +1,909 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Light background */
+}
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/**/
+/*landing page*/
+.landingContainer {
+    max-width: 1200px; /* Maximum width for the content */
+    margin: 0 auto; /* Center container */
+    padding: 20px; /* Padding around the content */
+}
+
+.topBar {
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center the top bar content */
+    align-items: center; /* Center items vertically */
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Padding inside the top bar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px; /* Space below the top bar */
+}
+
+.topBarContent {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between sections */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width */
+    max-width: 900px; /* Maximum width for the content */
+}
+
+.textSection {
+    flex: 1; /* Take remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+.empowerTitle {
+    font-size: 24px; /* Title font size */
+    color: #333; /* Dark color for text */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.engageDescription {
+    font-size: 16px; /* Description font size */
+    color: #555; /* Medium-dark color for description */
+}
+
+.buttonSection {
+    margin-left: 20px; /* Space between text and button */
+}
+
+.joinButton {
+    background-color: black; /* Black background for button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.joinButton:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+.keyFeatures {
+    text-align: center; /* Center text */
+}
+
+.featuresTitle {
+    font-size: 28px; /* Features title font size */
+    margin-bottom: 20px; /* Space below title */
+    color: #333; /* Dark color for title */
+}
+
+.featuresGrid {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the feature cards */
+    gap: 20px; /* Space between cards */
+}
+
+.featureCard {
+    background-color: white; /* Card background */
+    border: 1px solid #ddd; /* Card border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding for card */
+    text-align: center; /* Center text inside card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    min-width: 200px; /* Minimum width for feature cards */
+    flex: 1; /* Allow cards to grow and shrink */
+}
+
+.featureIcon {
+    font-size: 40px; /* Icon size */
+    margin-bottom: 10px; /* Space below icon */
+}
+
+.separator {
+    border: 0; /* Remove default border */
+    border-top: 1px solid #ddd; /* Gray line */
+    margin: 20px 0; /* Margin above and below the line */
+}
+
+.howItWorks {
+    text-align: center; /* Center text */
+    margin-top: 40px; /* Space above the section */
+}
+
+.howItWorksTitle {
+    font-size: 28px; /* Title font size */
+    color: #333; /* Dark color for title */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.stepDescription {
+    margin-bottom: 20px; /* Space below step description */
+}
+
+.stepsContainer {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the steps */
+    flex-wrap: wrap; /* Allow wrapping of steps */
+    gap: 20px; /* Space between steps */
+    max-width: 800px; /* Maximum width for the steps container */
+    margin: 0 auto; /* Center the container */
+}
+
+.step {
+    display: flex; /* Flexbox for step layout */
+    align-items: center; /* Center items vertically */
+    background-color: white; /* Step background */
+    border: 1px solid #ddd; /* Step border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding for step */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    min-width: 250px; /* Minimum width for each step */
+    flex: 1; /* Allow steps to grow and shrink */
+}
+
+.stepIcon {
+    font-size: 40px; /* Icon size */
+    margin-right: 15px; /* Space between icon and text */
+}
+
+.stepText {
+    text-align: left; /* Align text to the left */
+}
+
+.stepTitle {
+    font-size: 18px; /* Step title font size */
+    color: #333; /* Dark color for title */
+}
+
+.stepDescription {
+    font-size: 14px; /* Step description font size */
+    color: #555; /* Medium-dark color for description */
+}
+
+
+/* LOGIN  PAGE */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-title {
+    flex: 1;
+    text-align: right;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;  /* Centers the text horizontally */
+    align-items: center;  /* Centers the text vertically */
+}
+
+.login-title h1 {
+    font-size: 48px; /* Adjust size as needed */
+    color: rgb(0, 0, 0);
+}
+
+.login-form {
+    flex: 1; /* Make the form take less space */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+}
+
+.input-field {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure input fields take full width of the form */
+    max-width: 300px; /* Limit the maximum width */
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left; /* Align label text to the left */
+    color: rgb(0, 0, 0); /* Change label color to white */
+}
+
+.input-field input {
+    width: 100%; /* Full width of the parent */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.login-btn {
+    width: 100%; /* Full width of the parent */
+    max-width: 300px; /* Match button width with input field */
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.forgot-password, .google-login, .signup-link {
+    text-align: center;
+    margin-top: 10px; /* Space between each section */
+}
+
+.google-btn {
+    width: 100%; /* Full width of the parent */
+    max-width: 300px; /* Limit the maximum width */
+    padding: 10px; /* Adjust padding as needed */
+    background-color: #8a8a8a; /* Background color */
+    color: rgb(255, 255, 255); /* Text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor */
+    height: 40px; /* Fixed height */
+    display: flex; /* Flexbox for centering content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    border-radius: 4px; /* Optional: round corners */
+    font-size: 16px; /* Optional: adjust font size */
+}
+
+
+
+/* SIGNUP PAGE */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    width: 100%; /* Full width for the form section */
+    max-width: 400px; /* Maximum width for the form */
+    margin: 0 auto; /* Center the form section */
+}
+
+.form-title {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+label {
+    margin-top: 10px; /* Space above each label */
+    font-weight: bold; /* Make labels bold */
+}
+
+input {
+    width: 100%; /* Full width for input fields */
+    padding: 10px; /* Padding inside input fields */
+    margin-top: 5px; /* Space above input fields */
+    border: 1px solid #ccc; /* Light border for input fields */
+    border-radius: 5px; /* Rounded corners for input fields */
+}
+
+.submit-button {
+    margin-top: 20px; /* Space above the submit button */
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 10px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width */
+}
+
+.google-signin {
+    text-align: center; /* Center the Google button */
+}
+
+.google-button {
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    padding: 10px; /* Padding for the button */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width */
+    margin-top: 10px; /* Space above Google button */
+}
+
+.prompt {
+    margin-top: 15px; /* Space above prompt */
+    text-align: center; /* Center the prompt */
+}
+
+
+/* HOME*/
+/* Remove underline from all links */
+a {
+    text-decoration: none; /* No underline for all links */
+    color: inherit; /* Inherit color from parent element */
+}
+
+.container {
+    display: flex; /* Align sidebar and main content side by side */
+    margin: 20px; /* Add margin around the container */
+}
+
+.sidebar {
+    width: 200px; /* Fixed width for the sidebar */
+    padding: 20px; /* Padding inside sidebar */
+    background-color: #F3F3F3; /* Light background for sidebar */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+}
+
+.sidebar-section {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.sidebar-section h3 {
+    margin: 0; /* Remove default margin */
+    margin-bottom: 15px;/* Adjust the space between text */
+}
+
+.sidebar-section ul {
+    list-style-type: none; /* Remove bullets from list */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar-section ul li {
+    margin: 5px 0; /* Space between list items */
+}
+
+.sidebar-section ul li a {
+    color: #333; /* Dark text color */
+}
+
+.sidebar-section ul li a:hover {
+    color: gray; /* Change color on hover */
+}
+
+.main-content {
+    flex: 1; /* Take up the remaining space */
+    padding: 20px; /* Padding for main content */
+}
+
+.ideas-grid {
+    display: grid; /* Grid layout for ideas */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.idea-card {
+    background-color: white; /* White background for idea cards */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for cards */
+    transition: transform 0.2s; /* Smooth hover effect */
+    text-align: center; /* Center align text */
+}
+
+.idea-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.idea-image {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.idea-title {
+    color: black; /* Black text for title */
+    margin: 10px 0; /* Margin above and below title */
+}
+
+.idea-title:hover {
+    color: gray; /* Change color on hover */
+}
+
+.idea-description {
+    color: #555; /* Darker gray for description */
+    margin: 5px 0; /* Margin above and below description */
+}
+
+.idea-actions {
+    display: flex; /* Flexbox for action buttons */
+    justify-content: space-between; /* Space between buttons */
+    align-items: center; /* Center buttons vertically */
+    margin-top: 10px; /* Space above action buttons */
+}
+
+.vote-button {
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 18px; /* Size for vote buttons */
+    cursor: pointer;
+     /* Pointer cursor on hover */
+}
+
+.downvote-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.vote-count {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.vote-count {
+    margin: 0 10px; /* Space around vote count */
+}
+
+.comment-button {
+    background-color: black; /* Black background for comment button */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 5px 10px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+.comment-input {
+    width: 100%; /* Adjust the width as needed */
+    padding: 10px; /* Add padding for better appearance */
+    margin-top: 10px; /* Add some space above the input */
+    border: 1px solid #ddd; /* Light border for the input */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/*EXPLORE PAGE*/
+.idea-grid, .topic-grid, .category-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to new lines */
+    gap: 20px; /* Space between cards */
+}
+
+.idea-card, .topic-card, .category-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    flex: 1 1 calc(30% - 20px); /* 3 cards per row with spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.idea-card img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+}
+
+.idea-card h4, .topic-card h4, .category-card h4 {
+    margin: 10px 0 5px 0;
+}
+
+.idea-card p, .topic-card p, .category-card p {
+    margin: 5px 0;
+}
+
+.voting {
+    margin-top: 10px; /* Space above voting buttons */
+}
+
+
+/*DASHBOARD*/
+/* PROFILE SECTION */
+.profile-section {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    background-color: white; /* Background color for the profile section */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: 20px; /* Margin around the section */
+}
+
+.profile-section h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Title font size */
+    color: #333; /* Dark color for title */
+    text-align: center; /* Center align the title */
+}
+
+.profile-info {
+    width: 100%; /* Full width for profile info */
+    max-width: 400px; /* Limit the maximum width */
+    text-align: left; /* Align text to the left */
+    margin: 15px 0; /* Margin above and below */
+}
+
+.profile-info p {
+    margin: 5px 0; /* Margin for each paragraph */
+    color: #555; /* Darker gray for text */
+}
+
+.edit-profile-button {
+    padding: 10px 20px; /* Button padding */
+    background-color: black; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.edit-profile-button:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+/* Profile image styles */
+.profile-image {
+    border-radius: 50%; /* Circle shape for profile image */
+    width: 100px; /* Width of the profile image */
+    height: 100px; /* Height of the profile image */
+    object-fit: cover; /* Cover the area without distortion */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* EDIT*/
+.edit-profile {
+    max-width: 400px; /* Limit the maximum width of the edit profile form */
+    margin: 0 auto; /* Center the form */
+    padding: 20px; /* Padding for the form */
+    background-color: white; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.edit-profile h2 {
+    text-align: center; /* Center title */
+    color: #333; /* Dark color for text */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.input-field {
+    margin-bottom: 20px; /* Space between input fields */
+    width: 100%; /* Full width */
+}
+
+.input-field label {
+    display: block; /* Label block display */
+    margin-bottom: 5px; /* Space below label */
+    color: #333; /* Dark color for label */
+}
+
+.input-field input, .input-field textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for input fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+
+.submit-button {
+    background-color: black; /* Black background for button */
+    color: white; /* White text */
+    padding: 10px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    width: 100%; /* Full width */
+}
+.file-input-container {
+    margin-bottom: 20px; /* Space between input fields */
+    width: 100%; /* Full width */
+}
+
+.file-input-container label {
+    display: block; /* Label block display */
+    margin-bottom: 5px; /* Space below label */
+    color: #333; /* Dark color for label */
+}
+
+.file-input-container input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for input fields */
+    border: none; /* Remove border from file input */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.file-label {
+    display: block; /* Label block display */
+    margin-top: 5px; /* Space above label */
+    color: #777; /* Light color for file label */
+}
+
+/* Community Page Styles */
+/* Community Page Styles */
+.idea-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vote-buttons {
+    margin-top: 10px;
+}
+
+.upvote-btn,
+.downvote-btn {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upvote-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.downvote-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.vote-count {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+
+/* Features Page Styles */
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(33.333% - 20px); /* Three cards per row, adjust as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.feature-description {
+    margin: 0;
+}
+
+/* About Us Page Styles */
+/* About Us Page Styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add padding around main content */
+}
+
+.about-section {
+    max-width: 800px; /* Set a max width for better readability */
+    width: 100%; /* Ensure full width */
+    margin: 20px 0; /* Add vertical margin */
+}
+
+.mission-vision {
+    margin-bottom: 20px; /* Space between mission and vision sections */
+    padding: 15px; /* Add padding for spacing */
+    background-color: #fff; /* White background for contrast */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Contact Us Page Styles */
+.contact-form-section {
+    max-width: 600px; /* Set max width for the contact form */
+    width: 600px; /* Fixed width to make it square */
+    height: 600px; /* Fixed height to make it square */
+    margin: 20px auto; /* Center the section */
+    padding: 20px; /* Padding around the section */
+    background-color: #fff; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    display: flex; /* Use flexbox to arrange children */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: space-between; /* Space out items evenly */
+}
+
+.contact-info-section {
+    max-width: 400px; /* Set max width for the contact information */
+    margin: 20px auto; /* Center the section */
+    padding: 20px; /* Padding around the section */
+    background-color: #fff; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+h2 {
+    margin-bottom: 15px; /* Space below section titles */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below label */
+    color: black; /* Black text color */
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ddd; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+}
+
+select {
+    color: black; /* Black text color for select */
+}
+
+.submit-button {
+    padding: 10px 15px; /* Padding for button */
+    background-color: black; /* Black button background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.submit-button:hover {
+    background-color: #333; /* Darker shade on hover */
+}
+
+/*ADMIN DASHBOARD*/
+.admin-dashboard {
+    text-align: center; /* Center text */
+    margin: 20px auto; /* Center the dashboard horizontally */
+    max-width: 800px; /* Set a max width for better control */
+    padding: 0 10px; /* Add some padding to avoid edge-to-edge content */
+}
+
+.section {
+    border: 1px solid #ccc; /* Border around each section */
+    padding: 20px; /* Padding inside each section */
+    margin: 20px 0; /* Margin between sections */
+    border-radius: 8px; /* Rounded corners for aesthetic */
+}
+
+table {
+    width: 100%; /* Make the table full width */
+    margin: 10px 0; /* Margin around the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+th, td {
+    padding: 10px; /* Padding inside table cells */
+    border: 1px solid #ccc; /* Border for table cells */
+}
+
+button {
+    margin: 5px; /* Margin between buttons */
+    padding: 5px 10px; /* Padding for buttons */
+}
+
+/* Optional: to ensure the idea sections are styled nicely */
+.idea {
+    border: 1px solid #ccc; /* Border for idea sections */
+    padding: 10px; /* Padding inside idea sections */
+    margin: 10px 0; /* Margin between ideas */
+    border-radius: 5px; /* Rounded corners for idea sections */
+}
+
+.admin-dashboard {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background: #e7e7e7;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.section a {
+    text-decoration: none;
+    color: #35424a;
+}
+
+.manage-users {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #35424a;
+    color: white;
+}
+
+button {
+    background-color: #35424a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #454d55;
+}
+
+
+footer {
+    background-color: #F3F3F3;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

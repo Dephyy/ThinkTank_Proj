@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="home.html">ThinkTank</a>
+        </div>
+        <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="main-content">
+    <div class="add-user">
+        <h1>Add User</h1>
+        <form id="addUserForm">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="User">User</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+</div>
+    <script>
+        document.getElementById('addUserForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const formData = new FormData(this);
+            fetch('add_user.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('User added successfully!');
+                    window.location.href = 'manageuser.html'; // Redirect to manage users
+                } else {
+                    alert('Error adding user: ' + data.message);
+                }
+            });
+        });
+    </script>
+
+    
+</body>
+
+<footer>
+    <p>&copy; 2024 ThinkTank. All Rights Reserved.</p>
+</footer>
+
+</html>
